@@ -4,7 +4,7 @@
   "description": "One place that allows you to develop an AsyncAPI document, validate it, convert it to the latest version, preview the documentation and visualize the events flow.",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/asyncapi/studio/issues"
+    "url": "https://github.com/KrushilProlink/studio-new.git"
   },
   "main": "./src/index.tsx",
   "keywords": [
@@ -14,7 +14,7 @@
     "playground"
   ],
   "author": {
-    "name": "The AsyncAPI maintainers"
+    "name": "krushil"
   },
   "files": [
     "/build",
