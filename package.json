@@ -39,6 +39,7 @@
     "@hookstate/core": "^4.0.0-rc21",
     "@monaco-editor/react": "^4.4.6",
     "@tippyjs/react": "^4.2.6",
+    "fs": "^0.0.1-security",
     "js-base64": "^3.7.3",
     "js-file-download": "^0.4.12",
     "js-yaml": "^4.1.0",
