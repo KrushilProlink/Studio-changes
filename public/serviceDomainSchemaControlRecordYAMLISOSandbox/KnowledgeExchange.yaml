@@ -1,0 +1,477 @@
+asyncapi: 2.6.0
+info:
+  title: Knowledge Exchange
+  description: >-
+    BIAN Service Domain (expanded with ISO200022) | Packaged Business Capability
+    (PBC) | DDD Bounded Context | Consolidate, classify and provide structured
+    access to consolidated market intelligence, product and procedural knowledge
+    gained from the workforce in the execution of business to inform business
+    activity and support continual improvement
+  version: 12.0.0
+channels:
+  IntellectualPropertyExchangeOperatingSession/Created:
+      description: ''
+      publish:
+        operationId: IntellectualPropertyExchangeOperatingSession-created
+        summary: (DDD Domain Event) IntellectualPropertyExchangeOperatingSession
+        message:
+          $ref: '#/components/messages/IntellectualPropertyExchangeOperatingSession'
+  IntellectualPropertyExchangeOperatingSession/Updated:
+      description: ''
+      publish:
+        operationId: IntellectualPropertyExchangeOperatingSession-updated
+        summary: (DDD Domain Event) IntellectualPropertyExchangeOperatingSession
+        message:
+          $ref: '#/components/messages/IntellectualPropertyExchangeOperatingSession'
+  MaintenanceandAccessAdministration/Created:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) MaintenanceandAccessAdministration
+        message:
+          $ref: '#/components/messages/MaintenanceandAccessAdministration'
+  MaintenanceandAccessAdministration/Updated:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) MaintenanceandAccessAdministration
+        message:
+          $ref: '#/components/messages/MaintenanceandAccessAdministration'
+  CaptureandClassification/Created:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) CaptureandClassification
+        message:
+          $ref: '#/components/messages/CaptureandClassification'
+  CaptureandClassification/Updated:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) CaptureandClassification
+        message:
+          $ref: '#/components/messages/CaptureandClassification'
+  KnowledgeExchangeOutcome/Created:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) KnowledgeExchangeOutcome
+        message:
+          $ref: '#/components/messages/KnowledgeExchangeOutcome'
+  KnowledgeExchangeOutcome/Updated:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) KnowledgeExchangeOutcome
+        message:
+          $ref: '#/components/messages/KnowledgeExchangeOutcome'
+  Review_RefinementandEditing/Created:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) Review_RefinementandEditing
+        message:
+          $ref: '#/components/messages/ReviewRefinementandEditing'
+  Review_RefinementandEditing/Updated:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) Review_RefinementandEditing
+        message:
+          $ref: '#/components/messages/ReviewRefinementandEditing'
+  Archiving/Created:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) Archiving
+        message:
+          $ref: '#/components/messages/Archiving'
+  Archiving/Updated:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) Archiving
+        message:
+          $ref: '#/components/messages/Archiving'
+  IndexingandPublication/Created:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) IndexingandPublication
+        message:
+          $ref: '#/components/messages/IndexingandPublication'
+  IndexingandPublication/Updated:
+      description: ''
+      publish:
+        summary: (DDD Domain Event) IndexingandPublication
+        message:
+          $ref: '#/components/messages/IndexingandPublication'
+components:
+  messages:
+    IntellectualPropertyExchangeOperatingSession:
+        name: IntellectualPropertyExchangeOperatingSession
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/IntellectualPropertyExchangeOperatingSession'
+    MaintenanceandAccessAdministration:
+        name: MaintenanceandAccessAdministration
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/MaintenanceandAccessAdministration'
+    CaptureandClassification:
+        name: CaptureandClassification
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/CaptureandClassification'
+    KnowledgeExchangeOutcome:
+        name: KnowledgeExchangeOutcome
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/KnowledgeExchangeOutcome'
+    Review_RefinementandEditing:
+        name: Review_RefinementandEditing
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/Review_RefinementandEditing'
+    Archiving:
+        name: Archiving
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/Archiving'
+    IndexingandPublication:
+        name: IndexingandPublication
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        payload:
+          $ref: '#/components/schemas/IndexingandPublication'
+  schemas:
+    MaintenanceandAccessAdministration:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          MaintenanceandAccessAdministrationPreconditions:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The required status/situation and or tasks that need to be
+                completed prior to the invocation of the feature
+          MaintenanceandAccessAdministrationFunctionSchedule:
+              type: string
+              format: String
+              description: (DDD Entity) - The schedule and timing of the function
+          ContentMaintenanceandAccessAdministration:
+              $ref: '#/components/schemas/BusinessService'
+          ContentMaintenanceandAccessAdministrationServiceType:
+              type: string
+              format: String
+              description: (DDD Entity) - Reference to the specific business service type
+          ContentMaintenanceandAccessAdministrationServiceDescription:
+              type: string
+              format: String
+              description: (DDD Entity) - Description of the performed business service
+          ContentMaintenanceandAccessAdministrationServiceInputsandOuputs:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Mandatory and optional inputs and output information for the
+                business service
+          ContentMaintenanceandAccessAdministrationServiceWorkProduct:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Documentation, meeting schedules, notes, reasearch.
+                calculations and any other work products produced by the
+                business service
+          ContentMaintenanceandAccessAdministrationServiceName:
+              type: string
+              format: String
+              description: ''
+    BusinessService:
+        type: object
+        description: >-
+          (DDD Entity) - The Intellectual Property Exchange Operating Session specific
+          Business Service 
+        properties:
+          BusinessServiceType:
+              enum:
+                  -  Businessservicetypevalues
+    CaptureandClassification:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          CaptureandClassificationPreconditions:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The required status/situation and or tasks that need to be
+                completed prior to the invocation of the feature
+          CaptureandClassificationFunctionSchedule:
+              type: string
+              format: String
+              description: (DDD Entity) - The schedule and timing of the function
+          ContentCaptureandClassification:
+              $ref: '#/components/schemas/BusinessService'
+          ContentCaptureandClassificationServiceType:
+              type: string
+              format: String
+              description: (DDD Entity) - Reference to the specific business service type
+          ContentCaptureandClassificationServiceDescription:
+              type: string
+              format: String
+              description: (DDD Entity) - Description of the performed business service
+          ContentCaptureandClassificationServiceInputsandOuputs:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Mandatory and optional inputs and output information for the
+                business service
+          ContentCaptureandClassificationServiceWorkProduct:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Documentation, meeting schedules, notes, reasearch.
+                calculations and any other work products produced by the
+                business service
+          ContentCaptureandClassificationServiceName:
+              type: string
+              format: String
+              description: ''
+    KnowledgeExchangeOutcome:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          KnowledgeExchangeIncident:
+              type: string
+              format: String
+              description: ''
+          KnowledgeExchangeProvision:
+              type: string
+              format: String
+              description: ''
+    Review_RefinementandEditing:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          Review_RefinementandEditingPreconditions:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The required status/situation and or tasks that need to be
+                completed prior to the invocation of the feature
+          Review_RefinementandEditingFunctionSchedule:
+              type: string
+              format: String
+              description: (DDD Entity) - The schedule and timing of the function
+          ContentReview_RefinementandEditing:
+              $ref: '#/components/schemas/BusinessService'
+          ContentReview_RefinementandEditingServiceType:
+              type: string
+              format: String
+              description: (DDD Entity) - Reference to the specific business service type
+          ContentReview_RefinementandEditingServiceDescription:
+              type: string
+              format: String
+              description: (DDD Entity) - Description of the performed business service
+          ContentReview_RefinementandEditingServiceInputsandOuputs:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Mandatory and optional inputs and output information for the
+                business service
+          ContentReview_RefinementandEditingServiceWorkProduct:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Documentation, meeting schedules, notes, reasearch.
+                calculations and any other work products produced by the
+                business service
+          ContentReview_RefinementandEditingServiceName:
+              type: string
+              format: String
+              description: ''
+    Archiving:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          ArchivingPreconditions:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The required status/situation and or tasks that need to be
+                completed prior to the invocation of the feature
+          ArchivingFunctionSchedule:
+              type: string
+              format: String
+              description: (DDD Entity) - The schedule and timing of the function
+          ContentArchiving:
+              $ref: '#/components/schemas/BusinessService'
+          ContentArchivingServiceType:
+              type: string
+              format: String
+              description: (DDD Entity) - Reference to the specific business service type
+          ContentArchivingServiceDescription:
+              type: string
+              format: String
+              description: (DDD Entity) - Description of the performed business service
+          ContentArchivingServiceInputsandOuputs:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Mandatory and optional inputs and output information for the
+                business service
+          ContentArchivingServiceWorkProduct:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Documentation, meeting schedules, notes, reasearch.
+                calculations and any other work products produced by the
+                business service
+          ContentArchivingServiceName:
+              type: string
+              format: String
+              description: ''
+    IndexingandPublication:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          IndexingandPublicationPreconditions:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The required status/situation and or tasks that need to be
+                completed prior to the invocation of the feature
+          IndexingandPublicationFunctionSchedule:
+              type: string
+              format: String
+              description: (DDD Entity) - The schedule and timing of the function
+          ContentIndexingandPublication:
+              $ref: '#/components/schemas/BusinessService'
+          ContentIndexingandPublicationServiceType:
+              type: string
+              format: String
+              description: (DDD Entity) - Reference to the specific business service type
+          ContentIndexingandPublicationServiceDescription:
+              type: string
+              format: String
+              description: (DDD Entity) - Description of the performed business service
+          ContentIndexingandPublicationServiceInputsandOuputs:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Mandatory and optional inputs and output information for the
+                business service
+          ContentIndexingandPublicationServiceWorkProduct:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Documentation, meeting schedules, notes, reasearch.
+                calculations and any other work products produced by the
+                business service
+          ContentIndexingandPublicationServiceName:
+              type: string
+              format: String
+              description: ''
+    IntellectualPropertyExchangeOperatingSession:
+        type: object
+        description: >-
+          (DDD Entity) - Operate equipment and/or a largely automated facility  within
+          Knowledge Exchange. 
+
+          Example: Operate the bank's internal intranet facility.
+        properties:
+          IntellectualPropertyExchangeOperatingSessionSchedule:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The timetable of Intellectual Property Exchange Operating
+                Session
+          IntellectualPropertyExchangeOperatingSessionStatus:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The status of Intellectual Property Exchange Operating
+                Session
+          IntellectualPropertyExchangeOperatingSessionUsageLog:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - Reference to the log of (usage) ativities/events  of
+                Intellectual Property Exchange Operating Session
+          IntellectualPropertyExchangeOperatingSessionReference:
+              type: string
+              format: Object
+              description: >-
+                (DDD Entity) - Reference to the party who is involved in Intellectual
+                Property Exchange Operating Session
+          IntellectualPropertyExchangeOperatingSessionServiceProviderReference:
+              type: string
+              format: Object
+              description: >-
+                (DDD Entity) - Reference to the party who provides the services of
+                Intellectual Property Exchange Operating Session 
+          IntellectualPropertyExchangeOperatingSessionType:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - A Classification value that distinguishes between the type
+                of operations within Intellectual Property Exchange Operating
+                Session 
+          IntellectualPropertyExchangeOperatingSessionServiceProviderSchedule:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The schedule according to which the service provider will
+                operate the Intellectual Property Exchange Operating Session
+          IntellectualPropertyExchangeOperatingSessionServiceType:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - A Classification value that distinguishes between the type
+                of services within Intellectual Property Exchange Operating
+                Session 
+          IntellectualPropertyExchangeOperatingSessionServiceConfiguration:
+              type: string
+              format: String
+              description: >-
+                (DDD Entity) - The configuration of Intellectual Property Exchange
+                Operating Session

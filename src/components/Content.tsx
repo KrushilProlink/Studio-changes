@@ -8,7 +8,22 @@ import { VisualiserTemplate } from './Visualiser';
 import { debounce } from '../helpers';
 import { usePanelsState, useDocumentsState } from '../state';
 
-import type { FunctionComponent } from 'react';
+// import type { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
+import * as yaml from 'js-yaml'
+import { useFilesState } from '../state';
+
+declare const require: {
+  context(
+    directory: string,
+    useSubdirectories: boolean,
+    regExp: RegExp,
+  ): {
+    keys(): string[];
+    <T>(id: string): T;
+  };
+};
+const context = require.context('../../public/serviceDomainSchemaControlRecordYAMLISOSandbox', false, /\.yaml$/);
 
 interface ContentProps {}
 
@@ -48,6 +63,31 @@ export const Content: FunctionComponent<ContentProps> = () => { // eslint-disabl
       <Editor />
     </SplitPane>
   );
+
+  const { updateFile } = useFilesState((state) => state);
+
+  useEffect(() => {
+    const fileName = location.pathname.split('/').pop();
+    const fileNames = context.keys();
+
+    if (fileNames?.includes(`./${fileName}.yaml`)) {
+      const filePath = `./../serviceDomainSchemaControlRecordYAMLISOSandbox/${fileName}.yaml`;
+
+      fetch(filePath)
+        .then((response) => {
+          if (!response.ok) {
+            console.error(`File ${fileName} not found`);
+          }
+          return response.text();
+        })
+        .then((data) => {
+           updateFile('asyncapi', { content: data, modified: true, language: 'yaml', stat: { mtime: (new Date()).getTime()} });
+        })
+        .catch((error) => console.error(error));
+    } else {
+      console.error("File not exists");
+    }
+  }, [updateFile]);
 
   return (
     <div className="flex flex-1 flex-row relative">

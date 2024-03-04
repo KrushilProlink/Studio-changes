@@ -25,8 +25,11 @@ export const MonacoWrapper: FunctionComponent<MonacoEditorProps> = ({
 
   return (
     <MonacoEditor
+      key={file.stat?.mtime} 
       language={file.language}
       defaultValue={file.content}
+      // value={file.content}  
+      // defaultLanguage={file.language}
       theme="asyncapi-theme"
       onMount={editorSvc.onDidCreate.bind(editorSvc)}
       onChange={onChange}

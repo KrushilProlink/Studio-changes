@@ -1,12 +1,16 @@
 {
-  "name": "@asyncapi/studio/new",
-  "version": "1.0.0",
+  "name": "studio-dynamic-file-content-show",
+  "version": "1.1.4",
   "description": "One place that allows you to develop an AsyncAPI document, validate it, convert it to the latest version, preview the documentation and visualize the events flow.",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/KrushilProlink/studio-new.git"
   },
-  "main": "./src/index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrushilProlink/studio-new.git"
+  },
+  "main": "./build/index.js",
   "keywords": [
     "asyncapi",
     "documentation",
@@ -46,12 +50,13 @@
     "react-hot-toast": "2.4.0",
     "react-icons": "^4.6.0",
     "reactflow": "^11.2.0",
+    "webpack-node-externals": "^3.0.0",
     "zustand": "^4.1.4"
   },
   "scripts": {
     "dev": "npm run start",
     "start": "craco start",
-    "build": "npm run generate:template-parameters && craco build",
+    "build": "react-scripts build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf build",
     "test": "npm run test:unit",
     "test:unit": "craco test --watchAll=false --detectOpenHandles",
@@ -60,8 +65,7 @@
     "lint:fix": "eslint --max-warnings 0 --config .eslintrc . --fix",
     "generate:readme:toc": "markdown-toc -i README.md",
     "generate:assets": "npm run build && npm run generate:readme:toc",
-    "generate:template-parameters": "ts-node ./scripts/template-parameters.ts",
-    "prepublishOnly": "npm run build && npm run generate:readme:toc"
+    "generate:template-parameters": "ts-node ./scripts/template-parameters.ts"
   },
   "browserslist": {
     "production": [
@@ -98,6 +102,7 @@
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
+    "@types/webpack-env": "^1.18.4",
     "assert": "^2.0.0",
     "autoprefixer": "^10.4.13",
     "browserify-zlib": "^0.2.0",
@@ -119,12 +124,14 @@
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "tailwindcss": "^3.2.4",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3",
     "url": "^0.11.0",
     "util": "^0.12.5",
     "web-vitals": "^3.1.0",
-    "webpack": "^5.75.0"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.1.4"
   },
   "jest": {
     "transformIgnorePatterns": [

@@ -2,7 +2,7 @@ import React from 'react';
 
 import SplitPane from '../SplitPane';
 import { EditorSidebar } from './EditorSidebar';
-import { MonacoWrapper } from './MonacoWrapper';
+import { MonacoWrapper,  } from './MonacoWrapper';
 import { Terminal } from '../Terminal/Terminal';
 
 import { useOtherState } from '../../state';
