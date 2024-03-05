@@ -87,7 +87,7 @@ export const Content: FunctionComponent<ContentProps> = () => { // eslint-disabl
     } else {
       console.error("File not exists");
     }
-  }, [updateFile]);
+  }, []);
 
   return (
     <div className="flex flex-1 flex-row relative">
